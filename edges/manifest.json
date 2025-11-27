@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "UserSafe Guard脚本检测器",
+  "version": "1.1.0",
+  "description": "自动检测网页中的潜在风险脚本",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*",
+    "http://127.0.0.1:8500/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "UserSafe Guard脚本检测器"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外部脚本检测器 - 设置</title>
+    <link rel="stylesheet" href="options.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1>外部脚本检测器设置</h1>
+        </div>
+        
+        <div class="section">
+            <h2>可信域名白名单</h2>
+            <p class="description">添加到白名单的域名将被标记为可信，不会显示警告。</p>
+            
+            <div class="whitelist-container">
+                <div class="input-group">
+                    <input type="text" id="domainInput" placeholder="输入域名 (例如: cdn.example.com)">
+                    <button id="addDomainBtn">添加</button>
+                </div>
+                
+                <div class="whitelist" id="whitelist">
+                    <!-- 白名单项目将在这里动态生成 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>默认白名单</h2>
+            <p class="description">这些是预定义的可信域名，您可以根据需要移除它们。</p>
+            <button id="resetBtn" class="btn-secondary">恢复默认白名单</button>
+        </div>
+        
+        <div class="footer">
+            <button id="saveBtn" class="btn-primary">保存设置</button>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

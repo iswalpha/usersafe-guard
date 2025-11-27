@@ -1,0 +1,72 @@
+{
+  "manifest_version": 2,
+  "name": "UserSafe Guard脚本检测器",
+  "version": "1.2.0",
+  "description": "自动检测网页中的潜在风险脚本",
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "UserSafe Guard脚本检测器",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "http://127.0.0.1:8500/*"
+  ],
+
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+
+  "web_accessible_resources": [
+    "privacy_policy.html"
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "swalpha@126.com",
+      "data_collection_permissions": {
+          "required": [
+             "locationInfo"
+          ],
+          "optional": [
+             "technicalAndInteraction"
+          ]
+         },
+      "strict_min_version": "76.0"
+    }
+  }
+}
+

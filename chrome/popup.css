@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 400px;
+    background: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e5eb;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.logo i {
+    color: white;
+    font-size: 20px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.status-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 12px;
+}
+
+.status.safe .status-icon {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.status.warning .status-icon {
+    background: #fff3e0;
+    color: #ff9800;
+}
+
+.status.danger .status-icon {
+    background: #ffebee;
+    color: #f44336;
+}
+
+.status.scanning .status-icon {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.status-text {
+    flex: 1;
+}
+
+.status-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.status-desc {
+    font-size: 12px;
+    color: #666;
+}
+
+.scripts-list {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 15px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.script-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.script-item:last-child {
+    border-bottom: none;
+}
+
+.script-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+.internal .script-icon {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.external .script-icon {
+    background: #ffebee;
+    color: #f44336;
+}
+
+.trusted .script-icon {
+    background: #fff3e0;
+    color: #ff9800;
+}
+
+.script-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.script-src {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+}
+
+.script-type {
+    font-size: 11px;
+    color: #888;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 6px;
+}
+
+/* 互换颜色：设置按钮使用原上报按钮的颜色 */
+.btn-primary {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.btn-primary:hover {
+    background: #dee2e6;
+}
+
+/* 互换颜色：仿冒上报按钮使用原设置按钮的颜色 */
+.btn-secondary {
+    background: #6a11cb;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a0db3;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #888;
+}
+
+.empty-state {
+    padding: 30px 20px;
+    text-align: center;
+    color: #888;
+}
+
+.empty-state i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.empty-state p {
+    font-size: 13px;
+}
+
+.whitelist-btn {
+    background: none;
+    border: none;
+    color: #6a11cb;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.whitelist-btn:hover {
+    text-decoration: underline;
+}
+
+.service-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle-slider {
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    margin-right: 8px;
+    transition: background 0.3s;
+}
+
+.toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.toggle input:checked + .toggle-slider {
+    background: #4caf50;
+}
+
+.toggle input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+
+.toggle-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.analysis-section {
+    border-bottom: 2px solid #6a11cb;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    background: #6a11cb;
+    color: white;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+}
